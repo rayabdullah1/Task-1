@@ -2,7 +2,8 @@
 ### Speech to text &amp; ESP32 steps in Arduino
 
 ## (1) Speech to text
-Create a web page that converts the Audible sound into text, either in Arabic language, by using JavaScript, CSS, or HTML.
+**Create a web page that converts the Audible sound into text, either in Arabic language, by using JavaScript, CSS, or HTML.**
+
 
 ![‏‏لقطة الشاشة (124)](https://user-images.githubusercontent.com/108306624/178945560-e5f06fe7-a8f0-4403-aa19-4caa872e35ee.png)
 **-Receive the oudio in Arabic and then wrote it.**
@@ -48,10 +49,15 @@ Create a web page that converts the Audible sound into text, either in Arabic la
 ```
 
 ## (2) ESP32 steps in Arduino
--Writing the steps that describe how this piece works.
+**Writing the steps that describe how this piece works.**
 **Steps:**
 1. Download Arduino IDE 1.8.19 on your device.
-2. 
+2. Go to Tools > Board >  Boards Manager > in search bar write "esp32" > click on install.
+3. !!If ESP32 didn't show then go to File > Preferences > putting link of the library. 
+4. Go to Tools > Board >  ESP32 Arduino > WEMOS D1 MINI ESP32.
+5. Go to Tools > Port and select a COM port available.
+6. !!if the port not available, you have to check the update drivrs from device manager.
+7. go to File > Examples > Basics > Blink. To make sure the piece is working and programmed correctly
 
 code:
 ```
