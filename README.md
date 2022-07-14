@@ -50,7 +50,8 @@
 
 ## (2) ESP32 steps in Arduino
 **Writing the steps that describe how this piece works.**
-**Steps:**
+
+#### Steps:
 1. Download Arduino IDE 1.8.19 on your device.
 2. Go to Tools > Board >  Boards Manager > in search bar write "esp32" > click on install.
 3. !!If ESP32 didn't show then go to File > Preferences > putting link of the library. 
@@ -99,3 +100,5 @@ void loop() {
   delay(1000);                       // wait for a second
 }
 ```
+
+If you want to try it. [ESP32 simulator](https://wokwi.com/projects/new/esp32)
