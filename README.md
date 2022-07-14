@@ -11,7 +11,7 @@
 ![‏‏لقطة الشاشة (125)](https://user-images.githubusercontent.com/108306624/178945572-da3d27f0-5929-466f-a884-188842fdeaa5.png)
 **-Also, a pause recording button has been added.**
 
-**HTML** code:
+**code:**
 
 ```
 <!DOCTYPE html>
@@ -46,6 +46,58 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="script.js"></script>
 </html>
+
+
+//JS
+var SpeechRecognition = window.webkitSpeechRecognition
+
+var recognition = new SpeechRecognition()
+
+var textbox = $("#textbox")
+
+var instructions = $("#instructions")
+
+var content = ''
+
+recognition.continuous = true
+
+recognition.lang='ar';
+
+recognition.onstart = function () {
+    instructions.text("Voive Recognition is on")
+}
+recognition.onspeechend = function () {
+    instructions.text("No Activity")
+}
+
+recognition.onerror = function (){
+    instructions.text("Try Again")
+}
+
+recognition.onresult= function (event){
+    var current = event.resultIndex;
+
+    var transcript= event.results[current][0].transcript
+
+    content += transcript
+
+    textbox.val(content)
+}
+
+$("#start-btn").click(function(event) {
+if (content.length){
+    content += ''
+}
+recognition.start()
+})
+$('#pause-record-btn').click(function(event) {
+    recognition.stop();
+    instructions.text('Voice recognition paused');
+});
+
+textbox.on('input', function (){
+    content = $(this).val()
+})
 ```
 
 ## (2) ESP32 steps in Arduino
@@ -60,7 +112,7 @@
 6. !!if the port not available, you have to check the update drivrs from device manager.
 7. go to File > Examples > Basics > Blink. To make sure the piece is working and programmed correctly
 
-code:
+**code:**
 ```
 /*
   Blink
